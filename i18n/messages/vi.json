@@ -1,0 +1,17 @@
+{
+  "header": {
+    "logoName": "STARTER KIT VI"
+  },
+  "footer": {
+    "copyright": "© 2024 được tạo bởi <a target='__blank' href='https://github.com/leho-dev'>@leho-dev</a>"
+  },
+  "locale": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống"
+  }
+}

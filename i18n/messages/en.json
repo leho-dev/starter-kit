@@ -1,0 +1,17 @@
+{
+  "header": {
+    "logoName": "STARTER KIT EN"
+  },
+  "footer": {
+    "copyright": "© 2024 by <a target='__blank' href='https://github.com/leho-dev'>@leho-dev</a>"
+  },
+  "locale": {
+    "en": "English",
+    "vi": "Vietnamese"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}
