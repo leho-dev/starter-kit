@@ -1,19 +1,20 @@
 "use client";
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
-import { useLocale } from "next-intl";
 
 const LocaleSelect = () => {
-  const t = useTranslations("locale");
+  const t = useTranslations("common.locale");
 
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleChangeLocale = (newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
+  const handleChangeLocale = async (newLocale: string) => {
+    // TODO: too much rerender
+    router.push(pathname, { locale: newLocale });
+    router.refresh();
   };
 
   return (

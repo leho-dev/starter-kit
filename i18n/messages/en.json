@@ -1,17 +1,75 @@
 {
+  "common": {
+    "locale": {
+      "en": "English",
+      "vi": "Vietnamese"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "nav": {
+      "login": "Login",
+      "logout": "Logout",
+      "home": "Home",
+      "profile": "Profile"
+    },
+    "text": {
+      "loading": "Loading...",
+      "loginWith": "Login with",
+      "here": "here"
+    },
+    "notify": {
+      "success": {
+        "title": "Success",
+        "message": "Action was successful."
+      },
+      "error": {
+        "title": "Error",
+        "message": "Action was failed.",
+        "unknownError": "Unknown error. Please contact admin."
+      }
+    }
+  },
   "header": {
-    "logoName": "STARTER KIT EN"
+    "logoName": "STARTER KIT"
   },
   "footer": {
     "copyright": "© 2024 by <a target='__blank' href='https://github.com/leho-dev'>@leho-dev</a>"
   },
-  "locale": {
-    "en": "English",
-    "vi": "Vietnamese"
+  "auth": {
+    "title": "Auth Page",
+    "description": "Login to your account with your favorite social media."
   },
-  "theme": {
-    "light": "Light",
-    "dark": "Dark",
-    "system": "System"
+  "home": {
+    "title": "Homepage",
+    "nickname": {
+      "title": "List of Users Accessed",
+      "description": "This is the list of all nicknames that have access to this website. To change your nickname, please visit"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "description": "This is your profile information.",
+    "loginWith": "Login with",
+    "form": {
+      "submit": "Submit",
+      "placeholer": "Enter your nickname here ..."
+    }
+  },
+  "defaultPage": {
+    "error": {
+      "title": "Oops! Something went wrong!",
+      "description": "An error occurred in the Server!",
+      "reminder": "Please contact administrator of this website!",
+      "tryAgain": "Try again",
+      "redirect": "Go to the homepage"
+    },
+    "notFound": {
+      "title": "Oops! Page Not Found!",
+      "description": "Sorry, we can't find the page you're looking for. It may have been moved or does not exist.",
+      "redirect": "Go to the homepage"
+    }
   }
 }

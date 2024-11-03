@@ -1,17 +1,75 @@
 {
+  "common": {
+    "locale": {
+      "en": "Tiếng Anh",
+      "vi": "Tiếng Việt"
+    },
+    "theme": {
+      "light": "Sáng",
+      "dark": "Tối",
+      "system": "Hệ thống"
+    },
+    "nav": {
+      "login": "Đăng nhập",
+      "logout": "Đăng xuất",
+      "home": "Trang chủ",
+      "profile": "Trang cá nhân"
+    },
+    "text": {
+      "loading": "Đang tải...",
+      "loginWith": "Đăng nhập với",
+      "here": "ở đây"
+    },
+    "notify": {
+      "success": {
+        "title": "Thành công",
+        "message": "Thao tác thành công."
+      },
+      "error": {
+        "title": "Lỗi",
+        "message": "Thao tác thất bại.",
+        "unknownError": "Lỗi không xác định. Vui lòng liên hệ quản trị viên."
+      }
+    }
+  },
   "header": {
-    "logoName": "STARTER KIT VI"
+    "logoName": "KIT mẫu"
   },
   "footer": {
     "copyright": "© 2024 được tạo bởi <a target='__blank' href='https://github.com/leho-dev'>@leho-dev</a>"
   },
-  "locale": {
-    "en": "Tiếng Anh",
-    "vi": "Tiếng Việt"
+  "auth": {
+    "title": "Trang đăng nhập",
+    "description": "Đăng nhập vào tài khoản của bạn qua mạng xã hội."
   },
-  "theme": {
-    "light": "Sáng",
-    "dark": "Tối",
-    "system": "Hệ thống"
+  "home": {
+    "title": "Trang chủ",
+    "nickname": {
+      "title": "Danh sách người dùng đã truy cập",
+      "description": "Danh sách tất cả bí danh đã truy cập trang web này. Để thay đổi bí danh của bạn, vui lòng truy cập"
+    }
+  },
+  "profile": {
+    "title": "Trang cá nhân",
+    "description": "Thông tin hiện tại của bạn.",
+    "loginWith": "Đăng nhập bằng",
+    "form": {
+      "submit": "Cập nhật",
+      "placeholer": "Nhập bí danh của bạn ..."
+    }
+  },
+  "defaultPage": {
+    "error": {
+      "title": "Đã có lỗi xảy ra!",
+      "description": "Một lỗi nho nhỏ do Server!",
+      "reminder": "Vui lòng thông báo đến quản trị viên!",
+      "tryAgain": "Thử lại",
+      "redirect": "Quay về trang chủ"
+    },
+    "notFound": {
+      "title": "Trang không tồn tại!",
+      "description": "Xin lỗi, chúng tôi không thể tìm thấy trang bạn đang tìm kiếm. Nó có thể đã bị di chuyển hoặc không tồn tại.",
+      "redirect": "Quay về trang chủ"
+    }
   }
 }

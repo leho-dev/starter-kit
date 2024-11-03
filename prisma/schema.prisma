@@ -1,0 +1,27 @@
+// https://supabase.com/partners/integrations/prisma
+
+// NOTE: 
+// I do not use database of Supabase, I use my own database with prisma to save data locally.
+// I only use Supabase for authentication. You can use Supabase for database as well. 
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  schemas   = ["public"]
+}
+
+model Nickname {
+  id        Int      @id @default(autoincrement())
+  authorId  String   @unique
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@schema("public")
+}
