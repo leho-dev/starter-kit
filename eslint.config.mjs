@@ -1,8 +1,9 @@
-import nextNext from "@next/eslint-plugin-next";
-import path from "node:path";
+import { FlatCompat } from "@eslint/eslintrc";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import nextNext from "@next/eslint-plugin-next";
+import eslintPluginJsxA11y from "eslint-plugin-jsx-a11y";
+import path from "node:path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,10 +17,17 @@ const Configuration = [
   {
     ignores: ["**/dist", "**/node_modules", "**/.next"]
   },
-  ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
+  ...compat.extends(
+    "next/core-web-vitals",
+    "next/typescript",
+    "prettier",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@next/next/recommended"
+  ),
   {
     plugins: {
-      "@next/next": nextNext
+      "@next/next": nextNext,
+      "jsx-a11y": eslintPluginJsxA11y
     },
 
     languageOptions: {
@@ -29,7 +37,11 @@ const Configuration = [
     rules: {
       "react-hooks/exhaustive-deps": 0,
       "no-console": ["error", { allow: ["info", "warn", "error"] }],
-      "no-unused-vars": ["error", { varsIgnorePattern: "^_", argsIgnorePattern: "^_" }],
+      "no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" }
+      ],
+      "no-duplicate-imports": "error",
       "@typescript-eslint/no-require-imports": 0
     }
   }
