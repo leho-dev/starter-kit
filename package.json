@@ -2,9 +2,10 @@
   "name": "starter-kit",
   "version": "0.1.0",
   "private": true,
-  "prisma": {
-    "seed": "node prisma/seed.js",
-    "schema": "./prisma/schema.prisma"
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -69,5 +70,8 @@
       "pnpm format:fix",
       "pnpm lint:fix"
     ]
+  },
+  "prisma": {
+    "schema": "./configs/prisma/schema.prisma"
   }
 }
