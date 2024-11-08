@@ -1,11 +1,12 @@
 import "@/app/globals.css";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { Header } from "@/components/custom/Header";
-import { Footer } from "@/components/custom/Footer";
 import type { locale } from "@/types/global";
 import { type ReactNode } from "react";
 import { _LOCALES } from "@/constants/lang";
+import { setRequestLocale } from "next-intl/server";
+import { BaseLayout } from "@/components/custom/BaseLayout";
+import { PageLayout } from "@/components/custom/PageLayout";
 
 type LocaleLayoutType = { children: ReactNode; params: Promise<{ locale: locale }> };
 
@@ -15,16 +16,15 @@ export async function generateStaticParams() {
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutType) {
   const { locale } = await params;
+  setRequestLocale(locale);
 
   if (!routing.locales.includes(locale)) {
     notFound();
   }
 
   return (
-    <>
-      <Header />
-      <main className='flex-1 container'>{children}</main>
-      <Footer />
-    </>
+    <BaseLayout locale={locale}>
+      <PageLayout>{children}</PageLayout>
+    </BaseLayout>
   );
 }

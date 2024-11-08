@@ -2,6 +2,10 @@
   "name": "starter-kit",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "seed": "node prisma/seed.js",
+    "schema": "./prisma/schema.prisma"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -12,7 +16,8 @@
     "format:fix": "prettier --write .",
     "prepare": "husky",
     "lint-staged": "lint-staged",
-    "commitlint": "commitlint --edit"
+    "commitlint": "commitlint --edit",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "5.21.1",

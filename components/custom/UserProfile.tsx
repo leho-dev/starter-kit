@@ -20,6 +20,7 @@ const UserProfile = () => {
   const t = useTranslations("common.nav");
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const handleLogout = async () => {
     const supabase = createClient();
@@ -36,12 +37,13 @@ const UserProfile = () => {
       if (data.user) {
         setUser(data.user as User);
       }
+      setLoading(false);
     };
 
     getUser();
   }, []);
 
-  if (user === undefined) {
+  if (loading) {
     return null;
   }
 

@@ -3,19 +3,25 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { useTranslations, useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
+import { useTransition } from "react";
 
 const LocaleSelect = () => {
   const t = useTranslations("common.locale");
 
+  const [isPending, startTransition] = useTransition();
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
 
   const handleChangeLocale = async (newLocale: string) => {
-    // TODO: too much rerender
-    router.push(pathname, { locale: newLocale });
-    router.refresh();
+    startTransition(() => {
+      router.replace({ pathname }, { locale: newLocale });
+    });
   };
+
+  if (isPending) {
+    return null;
+  }
 
   return (
     <Select onValueChange={handleChangeLocale} defaultValue={locale}>
