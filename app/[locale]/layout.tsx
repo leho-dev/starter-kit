@@ -1,6 +1,6 @@
 import "@/app/globals.css";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { routing } from "@/configs/i18n/routing";
 import type { locale } from "@/types/global";
 import { type ReactNode } from "react";
 import { _LOCALES } from "@/constants/lang";

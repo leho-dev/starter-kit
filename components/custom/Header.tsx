@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { LocaleSelect } from "./LocaleSelect";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/configs/i18n/routing";
 import { ModeToggle } from "./ModeToggle";
 import { UserProfile } from "./UserProfile";
 

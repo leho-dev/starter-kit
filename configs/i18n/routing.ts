@@ -1,10 +1,10 @@
-import { _LOCALES } from "@/constants/lang";
+import { _DEFAULT_LOCALE, _LOCALES } from "@/constants/lang";
 import { createNavigation } from "next-intl/navigation";
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
   locales: _LOCALES,
-  defaultLocale: "vi"
+  defaultLocale: _DEFAULT_LOCALE
   // localeDetection: false
 });
 

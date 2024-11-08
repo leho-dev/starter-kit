@@ -3,7 +3,7 @@ import { getAllNickname } from "./actions";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { getRandomPastelColor, handleDatetime } from "@/utils/handleDatetime";
 import { Separator } from "@/components/ui/separator";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/configs/i18n/routing";
 import { _ROUTE_PROFILE } from "@/constants/route";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Metadata } from "next";

@@ -12,7 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { createClient } from "@/configs/supabase/client";
 import { redirect } from "next/navigation";
 import { _ROUTE_AUTH, _ROUTE_PROFILE } from "@/constants/route";
-import { useRouter } from "@/i18n/routing";
+import { useRouter } from "@/configs/i18n/routing";
 import { User } from "@supabase/supabase-js";
 import { useTranslations } from "next-intl";
 
