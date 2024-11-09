@@ -2,22 +2,29 @@
 
 import { handleErrorServerWithAuth } from "@/utils/handleErrorServer";
 import { prisma } from "@/configs/prisma/db";
-import { revalidatePath } from "next/cache";
+import { revalidateTag, unstable_cache } from "next/cache";
 
 const getProfile = async () =>
   handleErrorServerWithAuth({
-    cb: async ({ user }) => {
-      const nickname = await prisma.nickname.findUnique({
-        where: {
-          authorId: user!.id
-        }
-      });
+    cb: ({ user }) =>
+      unstable_cache(
+        async () => {
+          const nickname = await prisma.nickname.findUnique({
+            where: {
+              authorId: user!.id
+            }
+          });
 
-      return {
-        ...user,
-        nickname: nickname?.content
-      };
-    }
+          console.info("[actions.ts:18] ", "refetch user profile", user!.email);
+
+          return {
+            ...user,
+            nickname: nickname?.content
+          };
+        },
+        ["profile", user!.id],
+        { tags: [`profile::${user!.id}`] }
+      )()
   });
 
 const updateNickname = async (nickname: string) =>
@@ -44,7 +51,8 @@ const updateNickname = async (nickname: string) =>
         }
       });
 
-      revalidatePath("/[locale]", "page");
+      revalidateTag("nicknames");
+      revalidateTag(`profile::${user!.id}`);
       return updatedNickname;
     }
   });

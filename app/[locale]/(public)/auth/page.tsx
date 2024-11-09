@@ -1,5 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { LoginClient } from "./client/LoginClient";
+import { LoginClient } from "./auth.client";
 import { Metadata } from "next";
 import { locale } from "@/types/global";
 

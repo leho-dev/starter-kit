@@ -3,6 +3,7 @@ import { LocaleSelect } from "./LocaleSelect";
 import { Link } from "@/configs/i18n/routing";
 import { ModeToggle } from "./ModeToggle";
 import { UserProfile } from "./UserProfile";
+import { Suspense } from "react";
 
 const Header = () => {
   const t = useTranslations("header");
@@ -14,9 +15,15 @@ const Header = () => {
           <Link href='/'>{t("logoName")}</Link>
         </div>
         <div className='flex gap-2'>
-          <LocaleSelect />
-          <ModeToggle />
-          <UserProfile />
+          <Suspense fallback={"Loading ..."}>
+            <LocaleSelect />
+          </Suspense>
+          <Suspense fallback={"Loading ..."}>
+            <ModeToggle />
+          </Suspense>
+          <Suspense fallback={"Loading ..."}>
+            <UserProfile />
+          </Suspense>
         </div>
       </div>
     </header>
