@@ -7,4 +7,4 @@
 - Theming (light, dark, system)
 - Multi language (en, vi)
 - Login with social media (google, github)
--
+- Dockerize
