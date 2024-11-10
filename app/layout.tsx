@@ -1,5 +1,14 @@
 import { ReactNode } from "react";
 import "@/app/globals.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | Starter Kit",
+    default: "Starter Kit"
+  },
+  description: "Starter Kit"
+};
 
 type Props = {
   children: ReactNode;
