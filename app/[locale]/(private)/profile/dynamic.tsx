@@ -1,6 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { User } from "@supabase/supabase-js";
 import { getTranslations } from "next-intl/server";
 
@@ -25,11 +24,6 @@ const Profile = async ({ user }: { user: User }) => {
           </div>
         </div>
       </CardContent>
-      <CardFooter className='flex justify-center'>
-        <Label className='uppercase font-bold text-center'>
-          {t("loginWith")} {user?.app_metadata.provider}
-        </Label>
-      </CardFooter>
     </Card>
   );
 };

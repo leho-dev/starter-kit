@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { createClient } from "@/configs/supabase/client";
@@ -15,6 +15,7 @@ import { _ROUTE_AUTH, _ROUTE_PROFILE } from "@/constants/route";
 import { useRouter } from "@/configs/i18n/routing";
 import { User } from "@supabase/supabase-js";
 import { useTranslations } from "next-intl";
+import { Skeleton } from "../../ui/skeleton";
 
 const UserProfile = () => {
   const t = useTranslations("common.nav");
@@ -44,7 +45,7 @@ const UserProfile = () => {
   }, []);
 
   if (loading) {
-    return null;
+    return <Skeleton className='h-10 w-10 rounded-full' />;
   }
 
   return user ? (
