@@ -1,0 +1,16 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspaces:cached
+      - app-node-modules:/workspaces/node_modules
+      - app-command-history:/commandhistory
+      - app-oh-my-zsh:/home/node/.oh-my-zsh
+
+volumes:
+  app-node-modules:
+  app-command-history:
+  app-oh-my-zsh:
