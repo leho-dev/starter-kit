@@ -12,6 +12,7 @@ A starter kit with `NEXTJS 15`, `TYPESCRIPT`, `SHADCN/UI`, `PRISMA`, `SUPABASE`.
   - Linting & Formatting: [ESLint](https://eslint.org/), [Prettier](https://prettier.io/).
   - Pre-commit Hooks: [Husky](https://typicode.github.io/husky), [lint-staged](https://github.com/okonet/lint-staged)
   - Automated Release: [Semantic Release](https://semantic-release.gitbook.io/semantic-release/)
+- Devcontainer ([VSCode Remote](https://code.visualstudio.com/docs/remote/containers))
 - Dockerize ([Docker compose](https://docs.docker.com/compose/))
 
 ## Installation
