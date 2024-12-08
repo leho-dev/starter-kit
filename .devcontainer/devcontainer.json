@@ -1,0 +1,90 @@
+{
+  "name": "Starter Kit",
+  "dockerComposeFile": ["docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/workspaces",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1.3.2": {},
+    "ghcr.io/devcontainers/features/common-utils:2.5.2": {
+      "username": "node",
+      "installZsh": true,
+      "installOhMyZsh": true,
+      "configureZshAsDefaultShell": true,
+      "upgradePackages": true
+    }
+  },
+  "forwardPorts": [3000],
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "workbench.colorTheme": "Cobalt2",
+        "workbench.iconTheme": "material-icon-theme",
+        "editor.fontSize": 16,
+        "editor.fontWeight": "500",
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 120,
+        "editor.stickyScroll.enabled": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit",
+          "source.organizeImports": "explicit"
+        },
+        "files.autoSave": "afterDelay",
+        "files.associations": { "*.css": "tailwindcss" },
+        "files.exclude": { "specialized": true },
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+        "typescript.tsdk": "homepage/node_modules/typescript/lib",
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+        "[prisma]": {
+          "editor.defaultFormatter": "Prisma.prisma-insider"
+        },
+        "indentRainbow.colors": [
+          "rgba(0, 119, 182, 0.1)",
+          "rgba(0, 150, 199,0.1)",
+          "rgba(0, 180, 216,0.1)",
+          "rgba(72, 202, 228,0.1)",
+          "rgba(173, 232, 244,0.1)",
+          "rgba(202, 240, 248,0.1)"
+        ],
+        "indentRainbow.includedLanguages": ["html"],
+        "console-ninja.featureSet": "Community",
+        "github.copilot.editor.enableAutoCompletions": true,
+        "github.copilot.chat.generateTests.codeLens": true,
+        "github.copilot.chat.inlineChatCompletionTrigger.enabled": true,
+        "github.copilot.chat.temporalContext.enabled": true,
+        "github.copilot.enable": {
+          "*": true,
+          "plaintext": true,
+          "markdown": true,
+          "yaml": true
+        }
+      },
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "prisma.primsa",
+        "prisma.prisma-insider",
+        "oderwat.indent-rainbow",
+        "bradlc.vscode-tailwindcss",
+        "wallabyjs.console-ninja",
+        "eamodio.gitlens",
+        "wesbos.theme-cobalt2",
+        "PKief.material-icon-theme"
+      ]
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "node",
+  "containerUser": "node"
+}
